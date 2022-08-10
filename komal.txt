@@ -75,8 +75,17 @@ public class Next {
 		
 }
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//      selecting from list of elements
+			
+//			List <WebElement> test=driver.findElements(By.tagName("li"));
+//			for(WebElement t:test) {
+//				
+//				System.out.println(t.getText());
+//			}
 
 ////////////////////////////////////selenium documentation link .................................
 
 https://www.selenium.dev/documentation/webdriver/elements/
+
+
