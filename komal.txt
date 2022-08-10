@@ -1,0 +1,82 @@
+
+///////////////////////////////////////// keyboard actions to copy and paste selected text............................
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+///////////////////////////////keyboard ACTIONS////////////////////////////
+public class Key {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\STS\\semister 5\\automated_testing\\selenium\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.ca/");
+		Actions test = new Actions(driver);
+		test.keyDown(Keys.CONTROL).sendKeys("a").perform();
+		test.keyUp(Keys.CONTROL);
+		
+      ///////////////////////pasting copied text///////////////////////////////
+		
+		test.keyDown(Keys.CONTROL).sendKeys("c").perform();
+		test.keyUp(Keys.CONTROL);
+		
+	   driver.get("C:\\Users\\Chetan\\OneDrive\\Desktop\\newfolder\\test.html");
+	   WebElement test1 = driver.findElement(By.name("comment"));
+	   
+	   test1.click();
+	   test.keyDown(Keys.CONTROL).sendKeys("v").perform();
+	  	
+}
+}
+
+
+
+
+////////////////////////////////////////mouse actions ..............................................
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+/////////////////////////mouse actions///////////////////////////
+////diff between right and left click//////
+public class Next {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\STS\\semister 5\\automated_testing\\selenium\\chromedriver.exe");
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.selenium.dev/selenium/web/mouse_interaction");
+		
+		driver.manage().window().maximize();
+		WebElement drag =driver.findElement(By.id("draggable"));
+		
+	//  for simple drag and drop
+		//WebElement drop =driver.findElement(By.id("droppable"));
+		
+	   Actions test = new Actions(driver);
+	  // drag drop using pixels
+	   test.dragAndDropBy(drag, 1000, 100).perform();
+	   
+	   
+	   //for simple drag and drop
+	    // test.dragAndDrop(drag,drop).perform();
+	   
+	   
+	   
+	   
+		/*
+		 * WebElement test1 =driver.findElement(By.id("mouse-tracker"));
+		 * test.contextClick();
+		 */
+	   
+	   
+		
+}
+}
+
+
+////////////////////////////////////selenium documentation link .................................
+
+https://www.selenium.dev/documentation/webdriver/elements/
